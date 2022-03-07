@@ -1,0 +1,54 @@
+JDBC
+
+* JDBC stands for Java Database Connectivity. It provides a set of Java API for accessing the relational databases from Java program. These Java APIs enables Java programs to execute SQL statements and interact with any SQL compliant database.
+* JDBC provides a flexible architecture to write a database independent application that can runon different platforms and interact with different DBMS without any modification.
+
+HIBERNATE 
+
+* Hibernate is an Object-Relational Mapping(ORM) solution for JAVA. It is an open source persistent framework created by Gavin King in 2001. It is a powerful, high performance Object-Relational Persistence and Query service for any Java Application.
+*  maps Java classes to database tables and from Java data types to SQL data types and relieves the developer from 95% of common data persistence related programming tasks.
+* Hibernate sits between traditional Java objects and database server to handle all the works in persisting those objects based on the appropriate O/R mechanisms and patterns.
+
+HIBERNATE ADVANTAGES
+
+Here we have listed down the advantages of using Hibernate:
+
+*  Hibernate takes care of mapping Java classes to database tables using XML files and without writing any line of code. If there is a change in the database or in any table, then all that you need to change are the XML file properties.
+*  Provides simple APIs (classes and methods) for storing and retrieving Java objects directly to and from the database.
+*  Hibernate supports Inheritance, Association relations, and Collections.
+*  Abstracts away the unfamiliar SQL types and provides a way to work around familiar Java Objects.
+*  Hibernate does not require an application server to operate.
+
+Hibernate supports almost all the major RDBMS database servers. Following is a list of few of
+the database engines that Hibernate supports:
+	-> HSQL Database Engine
+	-> DB2/NT
+	-> MySQL
+	-> PostgreSQL
+	-> FrontBase
+	-> Oracle
+	-> Microsoft SQL Server Database
+	-> Sybase SQL Server
+	-> Informix Dynamic Server
+Hibernate supports a variety of other technologies as well including:
+	-> XDoclet Spring
+	-> J2EE
+	-> Eclipse plug-ins
+	-> Maven
+	
+Configuration Object:
+
+* Configuration is a serializable class. It is the first Hibernate object that you need to create in any Hibernate application. It is usually created only once during application initialization. It allows the application to specify properties and mapping documents to be used. 
+The Configuration object provides two keys components:
+-> Database Connection: A database connection is most important for Enterprise and Database applications. It is handled through one or more configuration files supported by Hibernate. Those are hibernate.properties file and hibernate.cfg.xml file.
+-> Mapping Setup: This component creates the connection between the Java classes and database tables. It creates mapping between each entity java class and each table in the database.
+
+Session Object:
+
+Session is an Interface that wraps the JDBC connection. That means, it creates a physical connection between the application and a database. The Session object is lightweight and designed to be instantiated each time an interaction is needed with the database. Persistent objects are saved and retrieved through a Session object.
+The Lifecycle of a Session is bounded by the beginning and end of a logical trasaction. It contains three states:
+-> transient: never persistent, currently not associated with any Session.
+-> persistent: currently associated with unique Session.
+-> detached: previously persistent, currently not associated with any Session.
+The session objects should not be kept open for a long time because they are not usually
+thread-safe. They should be created and destroyed them as needed.
